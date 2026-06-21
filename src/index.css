@@ -13,6 +13,14 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background: #F4EFE7;

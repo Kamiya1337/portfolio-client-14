@@ -13,18 +13,24 @@ export default function Sidebar({ activeTab, setActiveTab, isMobileOpen, setIsMo
   return (
     <>
       {/* Mobile Header - Thêm print:hidden để ẩn khi in */}
-      <div className="md:hidden flex items-center justify-between bg-academic-sidebar text-academic-cream p-4 shadow-md shadow-black/20 border-b border-academic-sidebar-border sticky top-0 z-50 print:hidden">
-        <div className="flex items-center gap-2 font-bold text-lg">
+      <div className="md:hidden flex w-full min-w-0 items-center justify-between gap-3 bg-academic-sidebar text-academic-cream p-4 shadow-md shadow-black/20 border-b border-academic-sidebar-border sticky top-0 z-50 print:hidden">
+        <div className="flex min-w-0 items-center gap-2 font-bold text-lg">
           <BookMarked className="text-academic-accent" />
-          <span>Learning Portfolio</span>
+          <span className="truncate">Learning Portfolio</span>
         </div>
-        <button onClick={() => setIsMobileOpen(!isMobileOpen)} className="p-1 bg-academic-cream text-academic-ink border border-academic-sidebar-border rounded">
+        <button
+          type="button"
+          data-mobile-menu-button
+          aria-label={isMobileOpen ? 'Đóng menu' : 'Mở menu'}
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          className="shrink-0 p-1 bg-academic-cream text-academic-ink border border-academic-sidebar-border rounded"
+        >
           {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Sidebar Navigation */}
-      <nav className={`${isMobileOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 fixed md:static inset-y-0 left-0 w-72 bg-academic-sidebar text-academic-accent transition-transform duration-300 ease-in-out z-40 flex flex-col shadow-2xl shadow-black/30 print:hidden`}>
+      <nav className={`${isMobileOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 fixed md:static inset-y-0 left-0 w-[min(18rem,85vw)] md:w-72 bg-academic-sidebar text-academic-accent transition-transform duration-300 ease-in-out z-[60] md:z-40 flex flex-col shadow-2xl shadow-black/30 print:hidden`}>
           <div className="p-6 border-b border-academic-sidebar-border">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-11 h-11 rounded-full bg-academic-cream flex items-center justify-center text-academic-ink font-bold text-sm tracking-wide shadow-lg ring-2 ring-academic-sidebar-border">NY</div>

@@ -27,7 +27,7 @@ export default function App() {
 
   return (
     // THAY ĐỔI CSS: Thêm print:h-auto và print:overflow-visible để fix lỗi cắt trang khi xuất PDF
-    <div className="flex h-screen print:h-auto print:min-h-0 bg-academic-background font-sans overflow-hidden print:overflow-visible print:bg-white text-academic-ink">
+    <div className="flex min-h-screen w-full max-w-full flex-col overflow-x-hidden bg-academic-background font-sans text-academic-ink md:h-screen md:flex-row md:overflow-hidden print:h-auto print:min-h-0 print:overflow-visible print:bg-white">
       <Sidebar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
@@ -36,7 +36,7 @@ export default function App() {
       />
       
       {/* THAY ĐỔI CSS TƯƠNG TỰ */}
-      <main className="flex-1 overflow-y-auto print:overflow-visible h-full print:h-auto p-4 md:p-8 lg:p-12 w-full print:p-0 print:block">
+      <main className="min-w-0 flex-1 overflow-x-hidden overflow-y-auto print:overflow-visible h-auto md:h-full print:h-auto p-4 md:p-8 lg:p-12 w-full max-w-full print:p-0 print:block">
         {renderContent()}
       </main>
     </div>

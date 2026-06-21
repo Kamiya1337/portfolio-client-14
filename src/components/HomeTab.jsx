@@ -5,22 +5,22 @@ export default function HomeTab({ setActiveTab }) {
   const { student, overview } = portfolioData;
 
   return (
-    <div className="max-w-6xl mx-auto space-y-12 animate-fade-in pb-10">
+    <div className="mx-auto max-w-6xl w-full min-w-0 space-y-12 animate-fade-in pb-10">
       
       {/* Hero Section */}
 
-      <div className="relative overflow-hidden rounded-3xl border border-academic-border bg-gradient-to-br from-academic-background via-academic-card to-academic-cream p-6 text-academic-ink shadow-2xl shadow-black/5 md:p-12">
+      <div className="relative max-w-full overflow-hidden rounded-3xl border border-academic-border bg-gradient-to-br from-academic-background via-academic-card to-academic-cream p-5 text-academic-ink shadow-2xl shadow-black/5 md:p-12">
         <div className="pointer-events-none absolute inset-y-0 right-0 w-full opacity-[0.06] md:w-1/2">
           <div className="absolute right-6 top-8 h-52 w-40 rounded-t-full border border-academic-cyan md:right-10 md:h-64 md:w-48" />
           <div className="absolute right-20 top-20 h-52 w-40 rounded-t-full border border-academic-blue-light md:right-24 md:h-64 md:w-48" />
         </div>
 
-        <div className="relative z-10 grid items-center gap-8 lg:grid-cols-[minmax(0,1.65fr)_minmax(280px,0.9fr)]">
-          <div className="max-w-3xl">
+        <div className="relative z-10 grid min-w-0 items-center gap-8 lg:grid-cols-[minmax(0,1.65fr)_minmax(280px,0.9fr)]">
+          <div className="min-w-0 max-w-3xl">
             <div className="mb-6 inline-block rounded-full border border-academic-border bg-academic-cream px-4 py-1.5 text-sm font-semibold tracking-wide text-academic-blue">
               Báo cáo Cuối kỳ
             </div>
-            <h1 className="mb-4 text-4xl font-extrabold leading-tight md:text-5xl">
+            <h1 className="mb-4 break-words text-4xl font-extrabold leading-tight md:text-5xl">
               Digital Technology & <br/><span className="bg-gradient-to-r from-academic-blue to-academic-blue-light bg-clip-text text-transparent">AI Learning Portfolio</span>
             </h1>
             <p className="mb-6 text-lg font-light text-academic-muted md:text-xl">
@@ -54,7 +54,7 @@ export default function HomeTab({ setActiveTab }) {
             </div>
           </div>
 
-          <aside className="relative mx-auto w-full max-w-sm rounded-[24px] border border-academic-border bg-academic-card/95 p-5 shadow-2xl shadow-black/10 backdrop-blur-sm">
+          <aside className="relative mx-auto w-full max-w-sm min-w-0 rounded-[24px] border border-academic-border bg-academic-card/95 p-5 shadow-2xl shadow-black/10 backdrop-blur-sm">
             <Quote className="absolute right-2 top-2 text-academic-cyan/40" size={58} strokeWidth={1.5} />
             <div className="pointer-events-none absolute bottom-10 right-8 h-24 w-24 rounded-full bg-academic-accent/20 blur-sm" />
 
@@ -66,7 +66,7 @@ export default function HomeTab({ setActiveTab }) {
                   <img
                     src="/avatar.jpg"
                     alt={student.name}
-                    className="h-80.2 w-full object-cover"
+                    className="h-72 w-full object-cover md:h-80"
                   />
                   <span className="absolute bottom-3 left-3 rounded-lg bg-academic-card/95 px-3 py-2 text-xs font-bold text-academic-blue shadow-sm">
                     {student.name}
